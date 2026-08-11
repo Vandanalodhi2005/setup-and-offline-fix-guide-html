@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Up & Troubleshoot Your Printer</title>
+    <meta name="description" content="Set Up & Troubleshoot Your Printer in Minutes. Download printer drivers, connect wireless printers, and get fast setup assistance.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            hp: '#0096D6',
+                            canon: '#CC0000',
+                            epson: '#003399',
+                            brother: '#0032A0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(67, 10, 146, 0.85) 0%, rgba(13, 23, 44, 0.9) 100%), url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .printer-card {
+            transition: all 0.3s ease;
+        }
+        .printer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px; /* Adjust as needed */
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- Hero Section -->
+    <header class="hero-bg relative pt-24 pb-32 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+        <div class="max-w-7xl mx-auto z-10 w-full">
+            <p class="text-gray-300 text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase mb-4">Start Printer Setup & Troubleshooting</p>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-md">
+                Set Up & Troubleshoot Your Printer in Minutes
+            </h1>
+            <p class="text-gray-200 text-lg sm:text-xl font-medium mb-12 drop-shadow-sm">Select Your Printer Model</p>
+
+            <!-- Cards Container -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
+                
+                <!-- HP Card -->
+                <div class="printer-card bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center cursor-pointer border border-gray-100">
+                    <div class="h-20 flex items-center justify-center mb-6">
+                        <img src="./images/hp-bg.png" alt="HP Logo" class="h-14 object-contain">
+                    </div>
+                    <span class="bg-blue-50 text-brand-hp text-xs font-semibold px-4 py-1 rounded-full mb-6 border border-blue-100">Printer Setup</span>
+                    <button class="bg-[#24a0ed] hover:bg-blue-500 text-white font-semibold py-2 px-6 rounded-full transition duration-300 flex items-center space-x-2 w-full justify-center shadow-md text-sm">
+                        <i class="fas fa-arrow-right text-xs"></i>
+                        <span>START NOW</span>
+                    </button>
+                </div>
+
+                <!-- Canon Card -->
+                <div class="printer-card bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center cursor-pointer border border-gray-100">
+                    <div class="h-20 flex items-center justify-center mb-6">
+                        <img src="./images/canon-bg.png" alt="Canon Logo" class="h-10 object-contain">
+                    </div>
+                    <span class="bg-red-50 text-brand-canon text-xs font-semibold px-4 py-1 rounded-full mb-6 border border-red-100">Printer Setup</span>
+                    <button class="bg-[#9c3444] hover:bg-red-800 text-white font-semibold py-2 px-6 rounded-full transition duration-300 flex items-center space-x-2 w-full justify-center shadow-md text-sm">
+                        <i class="fas fa-arrow-right text-xs"></i>
+                        <span>START NOW</span>
+                    </button>
+                </div>
+
+                <!-- EPSON Card -->
+                <div class="printer-card bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center cursor-pointer border border-gray-100">
+                    <div class="h-20 flex items-center justify-center mb-6">
+                        <img src="./images/epson-bg.png" alt="EPSON Logo" class="h-8 object-contain">
+                    </div>
+                    <span class="bg-blue-50 text-brand-epson text-xs font-semibold px-4 py-1 rounded-full mb-6 border border-blue-100">Printer Setup</span>
+                    <button class="bg-[#3e56a6] hover:bg-blue-800 text-white font-semibold py-2 px-6 rounded-full transition duration-300 flex items-center space-x-2 w-full justify-center shadow-md text-sm">
+                        <i class="fas fa-arrow-right text-xs"></i>
+                        <span>START NOW</span>
+                    </button>
+                </div>
+
+                <!-- Brother Card -->
+                <div class="printer-card bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center cursor-pointer border border-gray-100">
+                    <div class="h-20 flex items-center justify-center mb-6">
+                        <img src="./images/brother-bg.png" alt="Brother Logo" class="h-8 object-contain">
+                    </div>
+                    <span class="bg-blue-50 text-brand-brother text-xs font-semibold px-4 py-1 rounded-full mb-6 border border-blue-100">Printer Setup</span>
+                    <button class="bg-[#37528e] hover:bg-blue-900 text-white font-semibold py-2 px-6 rounded-full transition duration-300 flex items-center space-x-2 w-full justify-center shadow-md text-sm">
+                        <i class="fas fa-arrow-right text-xs"></i>
+                        <span>START NOW</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Decorative subtle wave at bottom of hero if desired, skipping for cleaner look -->
+    </header>
+
+    <!-- Middle Section: Features & Info -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-blue-600 tracking-wide uppercase mb-2">Print | Scan | Copy | Fax</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Your World Renowned Printer Assistant</h3>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Printers for Home & Office Needs</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-wifi text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Connect Wireless Printer</h4>
+                    <p class="text-gray-600">Easily connect your printer to your home or office Wi-Fi network for seamless printing from any device.</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-download text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Printer Driver Download</h4>
+                    <p class="text-gray-600">Get the latest, most compatible drivers for your printer model to ensure optimal performance.</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-tools text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Setup your Printer Quickly</h4>
+                    <p class="text-gray-600">Follow our simplified, step-by-step guides to get your new printer unboxed and running in minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support USPs Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="w-14 h-14 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fas fa-headset text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">24×7 Customer Support</h4>
+                    <p class="text-blue-100 text-sm md:text-base leading-relaxed">We really care about our clients, and that's why our professionals are here for you round the clock. Need help, contact us anytime.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="w-14 h-14 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fas fa-medal text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Years of Experience</h4>
+                    <p class="text-blue-100 text-sm md:text-base leading-relaxed">Our professionals have been helping printer users for over a decade, and with vast experience, they are capable of resolving any printer issue.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="w-14 h-14 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fas fa-hands-helping text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Support you need</h4>
+                    <p class="text-blue-100 text-sm md:text-base leading-relaxed">Our team of experts has in-depth knowledge about printer devices and has or can resolve any query, whether it is related to Driver or anything.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50 flex-grow">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto rounded"></div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold text-gray-900 pr-4">What are the steps to setup a new printer?</span>
+                        <i class="fas fa-chevron-down text-gray-400 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-gray-50 border-t border-gray-100">
+                        <div class="py-4 text-gray-600 text-sm md:text-base space-y-3">
+                            <p>Setting up a printer is a straightforward process if you have some knowledge about printing devices. But if you're a newbie with a printer, then be careful, as a single misstep can make your printer out of order.</p>
+                            <ol class="list-decimal list-inside pl-2 space-y-2 text-gray-700">
+                                <li>Plug in your printer and connect it to a wifi device.</li>
+                                <li>Visit your printer's manufacturer's website.</li>
+                                <li>Provide your printer model in the search box.</li>
+                                <li>Click on the Driver and Download option from the dashboard.</li>
+                                <li>Download the Driver for your printer and install it.</li>
+                                <li>Print a demo document to check whether your printer is set up correctly.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold text-gray-900 pr-4">My printer is not working properly. What are the reasons?</span>
+                        <i class="fas fa-chevron-down text-gray-400 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-gray-50 border-t border-gray-100">
+                        <div class="py-4 text-gray-600 text-sm md:text-base">
+                            <p>There are many reasons for a printer not working, including outdated printer drivers, incorrect configuration, empty ink cartridges, wifi error, driver error, etc. Let our professionals help you get the best results with your printer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold text-gray-900 pr-4">I changed my printer cartridges recently, and my printer has not been working since then.</span>
+                        <i class="fas fa-chevron-down text-gray-400 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-gray-50 border-t border-gray-100">
+                        <div class="py-4 text-gray-600 text-sm md:text-base">
+                            <p>Sometimes, when we change the ink cartridge or refill it, the printer still reads it as an empty cartridge, or sometimes, it doesn't even recognize the new ink cartridge. You can try resetting your printer cartridge settings or reinstalling your printer's ink cartridge.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0f172a] text-gray-400 pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Account -->
+                <div>
+                    <h5 class="text-white text-lg font-bold mb-6 tracking-wide uppercase">Account</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-blue-400 transition">My Account</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Order History</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Track Order</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Shopping Cart</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h5 class="text-white text-lg font-bold mb-6 tracking-wide uppercase">Quick Links</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-blue-400 transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Returns & Exchanges</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Cookies Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Accessibility</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Disclaimer</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Consumer Rights</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Do Not Sell or Share My Info</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h5 class="text-white text-lg font-bold mb-6 tracking-wide uppercase">Company</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-blue-400 transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Contact us</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">FAQ & Help Center</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Printer Buying Guide</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Guides & Resources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Get in Touch -->
+                <div>
+                    <h5 class="text-white text-lg font-bold mb-6 tracking-wide uppercase">Get in Touch</h5>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-envelope text-blue-500 mt-1"></i>
+                            <div>
+                                <span class="block text-gray-500 text-xs uppercase mb-1">Email</span>
+                                <a href="mailto:support@quickprintassists.com" class="text-gray-300 hover:text-white transition">support@quickprintassists.com</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-blue-500 mt-1"></i>
+                            <div>
+                                <span class="block text-gray-500 text-xs uppercase mb-1">Address</span>
+                                <span class="text-gray-300 block">17807 Lakecrest View Drive<br>Cypress, TX 77433</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-clock text-blue-500 mt-1"></i>
+                            <div>
+                                <span class="block text-gray-500 text-xs uppercase mb-1">Support Hours</span>
+                                <span class="text-gray-300">Monday–Friday<br>9am–6pm ET</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2024 QuickPrintAssists. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0 text-lg">
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        function toggleFaq(button) {
+            const faqItem = button.parentElement;
+            
+            // Close all other items (optional, but good for accordion)
+            const allItems = document.querySelectorAll('.faq-item');
+            allItems.forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Toggle current item
+            faqItem.classList.toggle('active');
+        }
+        
+        // Open first FAQ by default
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstFaq = document.querySelector('.faq-item');
+            if (firstFaq) {
+                firstFaq.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
