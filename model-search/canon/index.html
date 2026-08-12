@@ -151,25 +151,230 @@
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal()"></div>
         
         <!-- Modal Content -->
-        <div class="bg-white rounded-xl shadow-2xl relative z-10 w-[90%] max-w-lg overflow-hidden flex flex-col items-center pt-5 pb-8 px-8 transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+        <div class="bg-white rounded-xl shadow-2xl relative z-10 w-[95%] max-w-lg overflow-hidden flex flex-col pt-6 pb-8 px-6 md:px-8 transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
             <!-- Header -->
-            <div class="w-full flex justify-between items-center mb-8">
-                <h3 class="font-bold text-gray-900 text-[1.1rem]">Quick Download Free Drivers</h3>
+            <div class="w-full flex justify-between items-center mb-6 pb-4 border-b border-gray-100">
+                <h3 class="font-bold text-gray-900 text-[1.05rem]">Quick Download Free Drivers</h3>
                 <button onclick="closeModal()" class="text-gray-400 hover:text-gray-700 focus:outline-none transition-colors">
                     <i class="fas fa-times text-lg"></i>
                 </button>
             </div>
             
-            <!-- Action Button -->
-            <a href="#" class="bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium py-2.5 px-10 rounded-md transition-colors shadow-md flex items-center justify-center space-x-2 mb-3 w-48">
-                <span>Let's Start</span>
-                <i class="fas fa-arrow-right text-sm"></i>
-            </a>
-            
-            <p class="text-gray-600 text-sm mb-8 font-medium">Start Printer Setup Wizard</p>
-            
-            <!-- Graphic -->
-            <img src="../../images/wizard-start-box.png" alt="Printer Setup Wizard" class="w-64 h-auto object-contain">
+            <!-- Step 1: Setup Wizard -->
+            <div id="modalStep1" class="w-full flex flex-col items-center pt-2 pb-4">
+                <a href="#" onclick="startLoading(event)" class="bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium py-2.5 px-10 rounded-md transition-colors shadow-md flex items-center justify-center space-x-2 mb-3 w-48">
+                    <span>Let's Start</span>
+                    <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+                
+                <p class="text-gray-600 text-sm mb-10 font-medium">Start Printer Setup Wizard</p>
+                
+                <!-- Graphic -->
+                <img src="../../images/wizard-start-box.png" alt="Printer Setup Wizard" class="w-72 h-auto object-contain">
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="modalLoading" class="w-full hidden flex-col items-center justify-center py-12">
+                <svg class="animate-spin h-10 w-10 text-[#1a73e8] mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <p class="text-gray-600 font-medium text-[15px]">Preparing setup...</p>
+            </div>
+
+            <!-- Step 2: Selection -->
+            <div id="modalStep2" class="w-full hidden flex-col">
+                <div class="w-full text-left mb-5">
+                    <p class="font-medium text-gray-800 text-[15px]">Select Wi-Fi or USB connection?</p>
+                </div>
+
+                <!-- Options -->
+                <div class="w-full flex flex-col space-y-4">
+                    <!-- USB -->
+                    <div class="flex items-center justify-between p-4 border border-gray-100 bg-gray-50/50 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-center space-x-4">
+                            <div class="text-gray-500 flex items-center space-x-2 w-16 justify-center">
+                                <i class="fas fa-laptop"></i>
+                                <i class="fab fa-usb text-xs text-gray-400"></i>
+                                <i class="fas fa-print"></i>
+                            </div>
+                            <div>
+                                <span class="font-bold text-gray-900 text-[15px]">USB:</span>
+                                <span class="text-gray-600 text-[14px]">Connect via USB</span>
+                            </div>
+                        </div>
+                        <a href="#" onclick="startUsbSetup(event)" class="bg-[#1a73e8] hover:bg-[#1557b0] text-white text-[13px] font-semibold py-2 px-5 rounded-md transition-colors shadow-sm flex items-center space-x-2 flex-shrink-0">
+                            <span>Let's Start</span>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- WIFI -->
+                    <div class="flex items-center justify-between p-4 border border-gray-100 bg-gray-50/50 rounded-lg hover:shadow-md transition-shadow">
+                        <div class="flex items-center space-x-4">
+                            <div class="text-gray-500 flex items-center space-x-2 w-16 justify-center">
+                                <i class="fas fa-laptop"></i>
+                                <i class="fas fa-wifi text-xs text-gray-400"></i>
+                                <i class="fas fa-print"></i>
+                            </div>
+                            <div>
+                                <span class="font-bold text-gray-900 text-[15px]">WIFI:</span>
+                                <span class="text-gray-600 text-[14px]">Connect via Wifi.</span>
+                            </div>
+                        </div>
+                        <a href="#" onclick="startWifiSetup(event)" class="bg-[#1a73e8] hover:bg-[#1557b0] text-white text-[13px] font-semibold py-2 px-5 rounded-md transition-colors shadow-sm flex items-center space-x-2 flex-shrink-0">
+                            <span>Let's Start</span>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: USB Loading -->
+            <div id="modalUsbLoading" class="w-full hidden flex-col items-center pt-2 pb-4">
+                <p class="text-gray-600 text-[14px] text-center mb-6 px-4">Verify your printer's USB connection for a seamless setup process.</p>
+                <img src="../../images/usb-setup.jpg" alt="USB Connection" class="w-32 h-auto object-contain mb-8">
+                
+                <div class="flex items-center space-x-3 text-[#1a73e8]">
+                    <svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span class="text-gray-800 font-medium text-[13px]">Checking Printer Spooler... searching usb</span>
+                </div>
+            </div>
+
+            <!-- Step 4: USB Failed -->
+            <div id="modalUsbFailed" class="w-full hidden flex-col items-center pt-2 pb-2">
+                <p class="text-gray-600 text-[14px] text-center mb-4 px-4">Verify your printer's USB connection for a seamless setup process.</p>
+                <img src="../../images/usb-setup.jpg" alt="USB Connection" class="w-32 h-auto object-contain mb-4">
+                
+                <h4 class="font-bold text-gray-900 text-lg mb-4">USB connection failed.</h4>
+                
+                <div class="w-full border border-gray-200 rounded-lg overflow-hidden mb-5">
+                    <div class="flex justify-between items-center p-3 border-b border-gray-200 bg-gray-50/50">
+                        <span class="text-gray-700 text-[13px]">Check USB on both ends.</span>
+                        <a href="#" onclick="startRetry(event)" class="text-[#1a73e8] text-[13px] font-medium hover:underline">Retry</a>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-gray-50/50">
+                        <span class="text-gray-700 text-[13px]">Check USB drivers.</span>
+                        <a href="#" onclick="startRetry(event)" class="text-[#1a73e8] text-[13px] font-medium hover:underline">Check Drivers</a>
+                    </div>
+                </div>
+                
+                <div class="w-full flex flex-col space-y-3">
+                    <a href="javascript:void(Tawk_API.toggle())" class="w-full bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium py-2.5 rounded-md transition-colors text-center text-sm shadow-sm">
+                        Chat Now
+                    </a>
+                    <a href="tel:+10000000000" class="w-full border border-gray-300 hover:bg-gray-50 text-gray-800 font-medium py-2.5 rounded-md transition-colors text-center text-sm shadow-sm">
+                        Call Toll Free: +1 (000) 000-0000
+                    </a>
+                </div>
+            </div>
+
+            <!-- Step 5: Detecting Problems -->
+            <div id="modalDetecting" class="w-full hidden flex-col items-start pt-4 pb-12 px-4">
+                <h4 class="font-bold text-[#1a73e8] text-xl mb-4">Detecting problems</h4>
+                <div class="w-full bg-gray-100 rounded-full h-2 mb-4">
+                    <div class="bg-[#1a73e8] h-2 rounded-full w-[45%] animate-pulse"></div>
+                </div>
+                <p class="text-gray-600 text-[13px]">Checking the spooler service...</p>
+            </div>
+
+            <!-- Step 6: Error Code -->
+            <div id="modalError" class="w-full hidden flex-col items-center pt-6 pb-2">
+                <div class="flex items-center justify-center space-x-2 text-red-500 mb-6">
+                    <i class="fas fa-exclamation-circle text-xl"></i>
+                    <h4 class="font-bold text-lg">Error Code 0x00000709</h4>
+                </div>
+                
+                <p class="text-gray-700 text-[14px] text-center mb-1 leading-relaxed px-4">
+                    Registry error found, please check your registry files<br>settings or reinstall drivers.
+                </p>
+                <p class="text-gray-500 text-[12px] text-center mb-8">Access specialized expertise.</p>
+                
+                <div class="w-full flex flex-col space-y-3 px-2">
+                    <a href="javascript:void(Tawk_API.toggle())" class="w-full bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium py-2.5 rounded-md transition-colors text-center text-sm shadow-sm">
+                        Chat Now
+                    </a>
+                    <a href="tel:+10000000000" class="w-full border border-gray-300 hover:bg-gray-50 text-gray-800 font-medium py-2.5 rounded-md transition-colors text-center text-sm shadow-sm">
+                        Call Toll Free: +1 (000) 000-0000
+                    </a>
+                </div>
+            </div>
+
+            <!-- Step 7: WIFI Loading -->
+            <div id="modalWifiLoading" class="w-full hidden flex-col items-center pt-2 pb-4">
+                <p class="text-gray-600 text-[14px] text-center mb-6 px-4">Verify your printer's Wifi connection for a seamless setup process.</p>
+                <img src="../../images/wifi-setup.png" alt="WIFI Connection" class="w-32 h-auto object-contain mb-8">
+                
+                <div class="flex items-center space-x-3 text-[#1a73e8]">
+                    <svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span id="wifiLoadingText" class="text-gray-800 font-medium text-[13px]">Checking Printer Spooler...</span>
+                </div>
+            </div>
+
+            <!-- Step 8: WIFI Failed -->
+            <div id="modalWifiFailed" class="w-full hidden flex-col items-center pt-2 pb-2">
+                <p class="text-gray-600 text-[14px] text-center mb-4 px-4">Verify your printer's Wifi connection for a seamless setup process.</p>
+                <img src="../../images/wifi-setup.png" alt="WIFI Connection" class="w-32 h-auto object-contain mb-4">
+                
+                <h4 class="font-bold text-gray-900 text-lg mb-4">Wifi connection failed.</h4>
+                
+                <div class="w-full border border-gray-200 rounded-lg overflow-hidden mb-5">
+                    <div class="flex justify-between items-center p-3 border-b border-gray-200 bg-gray-50/50">
+                        <span class="text-gray-700 text-[13px]">Check Wifi status.</span>
+                        <a href="#" onclick="startWifiRetry(event)" class="text-[#1a73e8] text-[13px] font-medium hover:underline">Retry</a>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-gray-50/50">
+                        <span class="text-gray-700 text-[13px]">Check Wireless drivers.</span>
+                        <a href="#" onclick="startWifiRetry(event)" class="text-[#1a73e8] text-[13px] font-medium hover:underline">Check Drivers</a>
+                    </div>
+                </div>
+                
+                <div class="w-full flex flex-col space-y-3">
+                    <a href="javascript:void(Tawk_API.toggle())" class="w-full bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium py-2.5 rounded-md transition-colors text-center text-sm shadow-sm">
+                        Chat Now
+                    </a>
+                    <a href="tel:+10000000000" class="w-full border border-gray-300 hover:bg-gray-50 text-gray-800 font-medium py-2.5 rounded-md transition-colors text-center text-sm shadow-sm">
+                        Call Toll Free: +1 (000) 000-0000
+                    </a>
+                </div>
+            </div>
+
+            <!-- Step 9: WIFI Detecting Problems -->
+            <div id="modalWifiDetecting" class="w-full hidden flex-col items-start pt-4 pb-12 px-4">
+                <h4 class="font-bold text-[#1a73e8] text-xl mb-4">Detecting problems</h4>
+                <div class="w-full bg-gray-100 rounded-full h-2 mb-4">
+                    <div class="bg-[#1a73e8] h-2 rounded-full w-[45%] animate-pulse"></div>
+                </div>
+                <p class="text-gray-600 text-[13px]">Checking the spooler service...</p>
+            </div>
+
+            <!-- Step 10: WIFI Error Code -->
+            <div id="modalWifiError" class="w-full hidden flex-col items-center pt-6 pb-2">
+                <div class="flex items-center justify-center space-x-2 text-red-500 mb-6">
+                    <i class="fas fa-exclamation-circle text-xl"></i>
+                    <h4 class="font-bold text-lg">Error Code 0x00000709</h4>
+                </div>
+                
+                <p class="text-gray-700 text-[14px] text-center mb-1 leading-relaxed px-4">
+                    Registry error found, please check your registry files<br>settings or reinstall drivers.
+                </p>
+                <p class="text-gray-500 text-[12px] text-center mb-8">Access specialized expertise.</p>
+                
+                <div class="w-full flex flex-col space-y-3 px-2">
+                    <a href="javascript:void(Tawk_API.toggle())" class="w-full bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium py-2.5 rounded-md transition-colors text-center text-sm shadow-sm">
+                        Chat Now
+                    </a>
+                    <a href="tel:+10000000000" class="w-full border border-gray-300 hover:bg-gray-50 text-gray-800 font-medium py-2.5 rounded-md transition-colors text-center text-sm shadow-sm">
+                        Call Toll Free: +1 (000) 000-0000
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -190,6 +395,98 @@
             }, 10);
         }
         
+        function startLoading(e) {
+            if (e) e.preventDefault();
+            document.getElementById('modalStep1').classList.add('hidden');
+            document.getElementById('modalStep1').classList.remove('flex');
+            
+            document.getElementById('modalLoading').classList.remove('hidden');
+            document.getElementById('modalLoading').classList.add('flex');
+            
+            setTimeout(() => {
+                document.getElementById('modalLoading').classList.add('hidden');
+                document.getElementById('modalLoading').classList.remove('flex');
+                
+                document.getElementById('modalStep2').classList.remove('hidden');
+                document.getElementById('modalStep2').classList.add('flex');
+            }, 1500); // 1.5 seconds loading
+        }
+        
+        function startUsbSetup(e) {
+            if (e) e.preventDefault();
+            document.getElementById('modalStep2').classList.add('hidden');
+            document.getElementById('modalStep2').classList.remove('flex');
+            
+            document.getElementById('modalUsbLoading').classList.remove('hidden');
+            document.getElementById('modalUsbLoading').classList.add('flex');
+            
+            setTimeout(() => {
+                document.getElementById('modalUsbLoading').classList.add('hidden');
+                document.getElementById('modalUsbLoading').classList.remove('flex');
+                
+                document.getElementById('modalUsbFailed').classList.remove('hidden');
+                document.getElementById('modalUsbFailed').classList.add('flex');
+            }, 3000); // 3 seconds search
+        }
+        
+        function startRetry(e) {
+            if (e) e.preventDefault();
+            document.getElementById('modalUsbFailed').classList.add('hidden');
+            document.getElementById('modalUsbFailed').classList.remove('flex');
+            
+            document.getElementById('modalDetecting').classList.remove('hidden');
+            document.getElementById('modalDetecting').classList.add('flex');
+            
+            setTimeout(() => {
+                document.getElementById('modalDetecting').classList.add('hidden');
+                document.getElementById('modalDetecting').classList.remove('flex');
+                
+                document.getElementById('modalError').classList.remove('hidden');
+                document.getElementById('modalError').classList.add('flex');
+            }, 3000); // 3 seconds detecting
+        }
+        
+        function startWifiSetup(e) {
+            if (e) e.preventDefault();
+            document.getElementById('modalStep2').classList.add('hidden');
+            document.getElementById('modalStep2').classList.remove('flex');
+            
+            document.getElementById('modalWifiLoading').classList.remove('hidden');
+            document.getElementById('modalWifiLoading').classList.add('flex');
+            
+            const wifiText = document.getElementById('wifiLoadingText');
+            wifiText.innerText = "Checking Printer Spooler...";
+            
+            setTimeout(() => { wifiText.innerText = "Checking printer..."; }, 1500);
+            setTimeout(() => { wifiText.innerText = "Checking installation..."; }, 3000);
+            setTimeout(() => { wifiText.innerText = "Checking wifi networks..."; }, 4500);
+            
+            setTimeout(() => {
+                document.getElementById('modalWifiLoading').classList.add('hidden');
+                document.getElementById('modalWifiLoading').classList.remove('flex');
+                
+                document.getElementById('modalWifiFailed').classList.remove('hidden');
+                document.getElementById('modalWifiFailed').classList.add('flex');
+            }, 6000); // 6 seconds total
+        }
+        
+        function startWifiRetry(e) {
+            if (e) e.preventDefault();
+            document.getElementById('modalWifiFailed').classList.add('hidden');
+            document.getElementById('modalWifiFailed').classList.remove('flex');
+            
+            document.getElementById('modalWifiDetecting').classList.remove('hidden');
+            document.getElementById('modalWifiDetecting').classList.add('flex');
+            
+            setTimeout(() => {
+                document.getElementById('modalWifiDetecting').classList.add('hidden');
+                document.getElementById('modalWifiDetecting').classList.remove('flex');
+                
+                document.getElementById('modalWifiError').classList.remove('hidden');
+                document.getElementById('modalWifiError').classList.add('flex');
+            }, 3000); // 3 seconds detecting
+        }
+        
         function closeModal() {
             const modal = document.getElementById('downloadModal');
             const modalContent = document.getElementById('modalContent');
@@ -201,6 +498,43 @@
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
                 document.body.style.overflow = '';
+                
+                // Reset to step 1
+                document.getElementById('modalStep1').classList.remove('hidden');
+                document.getElementById('modalStep1').classList.add('flex');
+                
+                document.getElementById('modalLoading').classList.add('hidden');
+                document.getElementById('modalLoading').classList.remove('flex');
+                
+                document.getElementById('modalStep2').classList.add('hidden');
+                document.getElementById('modalStep2').classList.remove('flex');
+                
+                document.getElementById('modalUsbLoading').classList.add('hidden');
+                document.getElementById('modalUsbLoading').classList.remove('flex');
+                
+                document.getElementById('modalUsbFailed').classList.add('hidden');
+                document.getElementById('modalUsbFailed').classList.remove('flex');
+                
+                document.getElementById('modalDetecting').classList.add('hidden');
+                document.getElementById('modalDetecting').classList.remove('flex');
+                
+                document.getElementById('modalError').classList.add('hidden');
+                document.getElementById('modalError').classList.remove('flex');
+                
+                const wifiText = document.getElementById('wifiLoadingText');
+                if(wifiText) wifiText.innerText = "Checking Printer Spooler...";
+                
+                document.getElementById('modalWifiLoading').classList.add('hidden');
+                document.getElementById('modalWifiLoading').classList.remove('flex');
+                
+                document.getElementById('modalWifiFailed').classList.add('hidden');
+                document.getElementById('modalWifiFailed').classList.remove('flex');
+                
+                document.getElementById('modalWifiDetecting').classList.add('hidden');
+                document.getElementById('modalWifiDetecting').classList.remove('flex');
+                
+                document.getElementById('modalWifiError').classList.add('hidden');
+                document.getElementById('modalWifiError').classList.remove('flex');
             }, 300);
         }
     </script>
