@@ -56,7 +56,7 @@
             transition: transform 0.3s ease;
         }
         .middle-bg {
-            background: linear-gradient(90deg, rgba(62, 107, 156, 1) 0%, rgba(74, 126, 179, 0.85) 35%, rgba(255,255,255,0) 65%), url('images/printer-setup.jpg');
+            background: linear-gradient(90deg, rgb(15, 46, 226) 0%, rgba(74, 126, 179, 0.85) 35%, rgba(255,255,255,0) 65%), url('images/printer-setup.jpg');
             background-color: #e5e7eb;
             background-size: cover;
             background-position: center right;
@@ -113,7 +113,7 @@
             font-size: 0.7rem;
             font-weight: 700;
             letter-spacing: 0.15em;
-            color: #3b82f6;
+            color: #024ad8;
             background: linear-gradient(135deg, #eff6ff, #dbeafe);
             padding: 6px 18px;
             border-radius: 50px;
@@ -137,14 +137,14 @@
             letter-spacing: 0.02em;
         }
         .printer-btn-primary {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            background: linear-gradient(135deg, #024ad8 0%, #013295 100%);
             color: #fff;
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
+            box-shadow: 0 4px 20px rgba(2, 74, 216, 0.35);
         }
         .printer-btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 32px rgba(37, 99, 235, 0.5);
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            box-shadow: 0 8px 32px rgba(2, 74, 216, 0.5);
+            background: linear-gradient(135deg, #2563eb 0%, #024ad8 100%);
         }
         .printer-btn-secondary {
             background: rgba(255, 255, 255, 0.15);
@@ -162,7 +162,7 @@
            HERO SECTION
         =========================== */
         .printer-hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);
+            /* background: linear-gradient(135deg, #061a49 0%, #1e3a5f 50%, #1e40af 100%); */
             padding: 80px 0 100px;
             position: relative;
             overflow: hidden;
@@ -198,14 +198,14 @@
         .printer-hero-content h1 {
             font-size: 3rem;
             font-weight: 800;
-            color: #fff;
+            color: #024ad8;
             line-height: 1.15;
             margin: 0 0 24px;
             letter-spacing: -0.03em;
         }
         .printer-hero-content h1 span {
             display: block;
-            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            background: linear-gradient(135deg, #0e61c5, #3f09e0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -230,8 +230,8 @@
             gap: 10px;
             font-size: 0.78rem;
             font-weight: 600;
-            color: #93c5fd;
-            background: rgba(59, 130, 246, 0.1);
+            color: #2b343d;
+            background: rgba(8, 74, 180, 0.1);
             border: 1px solid rgba(59, 130, 246, 0.2);
             padding: 8px 18px;
             border-radius: 50px;
@@ -336,7 +336,7 @@
         .printer-status-card small {
             display: block;
             font-size: 0.65rem;
-            color: #94a3b8;
+            color: white;
             font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -351,13 +351,13 @@
             position: absolute;
             bottom: 30px;
             left: 0;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(51, 50, 50, 0.1);
             backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.15);
             padding: 12px 20px;
             border-radius: 14px;
             font-size: 0.8rem;
-            color: #e2e8f0;
+            color: white;
             font-weight: 600;
             display: flex;
             align-items: center;
@@ -406,7 +406,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            background: linear-gradient(90deg, #024ad8, #2563eb);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -419,16 +419,17 @@
             opacity: 1;
         }
         .printer-cause-icon {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             margin-bottom: 16px;
             width: 52px;
             height: 52px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            background: #024ad8;
+            color: #fff;
             border-radius: 14px;
-            border: 1px solid #bfdbfe;
+            border: none;
         }
         .printer-cause-card h3 {
             font-size: 0.95rem;
@@ -489,8 +490,8 @@
             font-size: 1.1rem;
             font-weight: 800;
             color: #fff;
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+            background: #024ad8;
+            box-shadow: 0 6px 20px rgba(2, 74, 216, 0.35);
             transition: transform 0.3s ease;
         }
         .printer-step-card:hover .printer-step-number {
@@ -545,11 +546,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
-            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            font-size: 1.2rem;
+            background: #024ad8;
+            color: #fff;
             border-radius: 14px;
             flex-shrink: 0;
-            border: 1px solid #bfdbfe;
+            border: none;
             transition: transform 0.3s ease;
         }
         .printer-guide-card:hover .printer-guide-icon {
@@ -575,7 +577,7 @@
             flex-shrink: 0;
         }
         .printer-guide-card:hover .printer-arrow {
-            color: #3b82f6;
+            color: #024ad8;
             transform: translateX(4px);
         }
 
@@ -601,8 +603,8 @@
             box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
         }
         .printer-faq-item.active {
-            border-color: #3b82f6;
-            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.12);
+            border-color: #024ad8;
+            box-shadow: 0 8px 32px rgba(2, 74, 216, 0.12);
         }
         .printer-faq-question {
             display: flex;
@@ -628,7 +630,7 @@
             padding-right: 16px;
         }
         .printer-faq-item.active .printer-faq-question span:first-child {
-            color: #1d4ed8;
+            color: #024ad8;
         }
         .printer-faq-plus {
             width: 32px;
@@ -645,7 +647,7 @@
             transition: all 0.3s ease;
         }
         .printer-faq-item.active .printer-faq-plus {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            background: #024ad8;
             color: #fff;
             transform: rotate(45deg);
         }
@@ -700,10 +702,10 @@
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            background: #024ad8;
             color: #fff;
             border-radius: 50%;
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 6px 20px rgba(2, 74, 216, 0.3);
         }
         .printer-trust-card h3 {
             font-size: 1rem;
@@ -943,7 +945,7 @@
           Printer Troubleshooting Guide
         </span>
 
-        <h1>
+        <h1 class="text-[#024ad8]">
           Why Is My
           <span>Printer Offline?</span>
         </h1>
@@ -974,20 +976,8 @@
           <strong>● Offline</strong>
         </div>
 
-        <div class="printer-illustration">
-
-          <div class="printer-paper"></div>
-
-          <div class="printer-machine">
-
-            <div class="printer-top"></div>
-
-            <div class="printer-display"></div>
-
-            <div class="printer-output"></div>
-
-          </div>
-
+        <div class="printer-illustration" style="max-width: 500px;">
+          <img src="images/offline.png" alt="Printer Offline Illustration" style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); position: relative; z-index: 1;">
         </div>
 
         <div class="printer-check-card">
