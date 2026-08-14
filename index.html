@@ -61,6 +61,794 @@
             background-size: cover;
             background-position: center right;
         }
+
+        /* ===================================
+           PRINTER HELP PAGE – PREMIUM CSS
+        =================================== */
+
+        .printer-help-page {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+        }
+
+        /* --- Container --- */
+        .printer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Section --- */
+        .printer-section {
+            padding: 80px 0;
+        }
+        .printer-setup-section {
+            background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+        }
+
+        /* --- Section Heading --- */
+        .printer-section-heading {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 56px;
+        }
+        .printer-section-heading h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.2;
+            margin: 0 0 16px;
+            letter-spacing: -0.02em;
+        }
+        .printer-section-heading p {
+            font-size: 1.05rem;
+            color: #64748b;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* --- Eyebrow --- */
+        .printer-eyebrow {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: #3b82f6;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            padding: 6px 18px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            border: 1px solid #bfdbfe;
+        }
+
+        /* --- Buttons --- */
+        .printer-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 14px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            letter-spacing: 0.02em;
+        }
+        .printer-btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
+        }
+        .printer-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(37, 99, 235, 0.5);
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+        .printer-btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(8px);
+        }
+        .printer-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.7);
+            transform: translateY(-3px);
+        }
+
+        /* ===========================
+           HERO SECTION
+        =========================== */
+        .printer-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);
+            padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .printer-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .printer-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .printer-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .printer-hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.15;
+            margin: 0 0 24px;
+            letter-spacing: -0.03em;
+        }
+        .printer-hero-content h1 span {
+            display: block;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .printer-hero-content p {
+            font-size: 1.05rem;
+            color: #94a3b8;
+            line-height: 1.8;
+            margin: 0 0 36px;
+            max-width: 520px;
+        }
+        .printer-hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* --- Badge --- */
+        .printer-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #93c5fd;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 8px 18px;
+            border-radius: 50px;
+            margin-bottom: 28px;
+            backdrop-filter: blur(8px);
+        }
+        .printer-status-dot {
+            width: 8px;
+            height: 8px;
+            background: #f87171;
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(248, 113, 113, 0.6); }
+            50% { opacity: 0.7; box-shadow: 0 0 0 8px rgba(248, 113, 113, 0); }
+        }
+
+        /* --- Hero Visual / Illustration --- */
+        .printer-hero-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 380px;
+        }
+        .printer-illustration {
+            position: relative;
+            z-index: 1;
+        }
+        .printer-machine {
+            width: 220px;
+            background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        .printer-top {
+            height: 16px;
+            background: linear-gradient(180deg, #f1f5f9, #e2e8f0);
+            border-radius: 8px 8px 0 0;
+            margin: -16px -16px 12px;
+            border-bottom: 2px solid #cbd5e1;
+        }
+        .printer-display {
+            height: 32px;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            border-radius: 6px;
+            margin-bottom: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        .printer-display::after {
+            content: '● OFFLINE';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.55rem;
+            font-weight: 700;
+            color: #f87171;
+            letter-spacing: 0.1em;
+            animation: blink-text 1.5s ease-in-out infinite;
+        }
+        @keyframes blink-text {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .printer-output {
+            height: 10px;
+            background: #94a3b8;
+            border-radius: 0 0 4px 4px;
+            margin: 0 20px;
+        }
+        .printer-paper {
+            width: 140px;
+            height: 80px;
+            background: #fff;
+            border-radius: 2px;
+            margin: 0 auto 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+            background-image:
+                repeating-linear-gradient(transparent, transparent 10px, #e2e8f0 10px, #e2e8f0 11px);
+        }
+
+        /* --- Floating Cards --- */
+        .printer-status-card {
+            position: absolute;
+            top: 20px;
+            right: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 14px 22px;
+            border-radius: 14px;
+            z-index: 2;
+            animation: float-card 4s ease-in-out infinite;
+        }
+        .printer-status-card small {
+            display: block;
+            font-size: 0.65rem;
+            color: #94a3b8;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .printer-status-card strong {
+            font-size: 0.85rem;
+            color: #f87171;
+            font-weight: 700;
+        }
+        .printer-check-card {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 12px 20px;
+            border-radius: 14px;
+            font-size: 0.8rem;
+            color: #e2e8f0;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 2;
+            animation: float-card 4s ease-in-out infinite 1s;
+        }
+        .printer-check-card span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        @keyframes float-card {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        /* ===========================
+           COMMON CAUSES GRID
+        =========================== */
+        .printer-causes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .printer-cause-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 28px 24px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .printer-cause-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .printer-cause-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1);
+            border-color: #bfdbfe;
+        }
+        .printer-cause-card:hover::before {
+            opacity: 1;
+        }
+        .printer-cause-icon {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-radius: 14px;
+            border: 1px solid #bfdbfe;
+        }
+        .printer-cause-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 8px;
+            line-height: 1.35;
+        }
+        .printer-cause-card p {
+            font-size: 0.83rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ===========================
+           SETUP STEPS
+        =========================== */
+        .printer-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            position: relative;
+        }
+        .printer-steps::before {
+            content: '';
+            position: absolute;
+            top: 44px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, #cbd5e1 0px, #cbd5e1 8px, transparent 8px, transparent 16px);
+            z-index: 0;
+        }
+        .printer-step-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 32px 20px 28px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .printer-step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 48px rgba(15, 23, 42, 0.1);
+            border-color: #93c5fd;
+        }
+        .printer-step-number {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #fff;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+            transition: transform 0.3s ease;
+        }
+        .printer-step-card:hover .printer-step-number {
+            transform: scale(1.1);
+        }
+        .printer-step-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 10px;
+        }
+        .printer-step-card p {
+            font-size: 0.82rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .printer-centered-button {
+            text-align: center;
+            margin-top: 52px;
+        }
+
+        /* ===========================
+           PRINTER GUIDES GRID
+        =========================== */
+        .printer-guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+        .printer-guide-card {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 22px 24px;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .printer-guide-card:hover {
+            transform: translateX(6px);
+            border-color: #93c5fd;
+            box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
+            background: linear-gradient(135deg, #fff 0%, #f0f7ff 100%);
+        }
+        .printer-guide-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-radius: 14px;
+            flex-shrink: 0;
+            border: 1px solid #bfdbfe;
+            transition: transform 0.3s ease;
+        }
+        .printer-guide-card:hover .printer-guide-icon {
+            transform: scale(1.1);
+        }
+        .printer-guide-card h3 {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 4px;
+        }
+        .printer-guide-card p {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .printer-arrow {
+            margin-left: auto;
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        .printer-guide-card:hover .printer-arrow {
+            color: #3b82f6;
+            transform: translateX(4px);
+        }
+
+        /* ===========================
+           FAQ ACCORDION
+        =========================== */
+        .printer-faq {
+            max-width: 820px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .printer-faq-item {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .printer-faq-item:hover {
+            border-color: #93c5fd;
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+        }
+        .printer-faq-item.active {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.12);
+        }
+        .printer-faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px 26px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: 'Inter', sans-serif;
+            transition: background 0.2s ease;
+        }
+        .printer-faq-question:hover {
+            background: #f8fafc;
+        }
+        .printer-faq-question span:first-child {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.4;
+            padding-right: 16px;
+        }
+        .printer-faq-item.active .printer-faq-question span:first-child {
+            color: #1d4ed8;
+        }
+        .printer-faq-plus {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #94a3b8;
+            background: #f1f5f9;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .printer-faq-item.active .printer-faq-plus {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: #fff;
+            transform: rotate(45deg);
+        }
+        .printer-faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .printer-faq-item.active .printer-faq-answer {
+            max-height: 300px;
+        }
+        .printer-faq-answer p {
+            padding: 0 26px 24px;
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.8;
+            margin: 0;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 16px;
+        }
+
+        /* ===========================
+           TRUST SECTION
+        =========================== */
+        .printer-trust-section {
+            background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+            border-top: 1px solid #e2e8f0;
+        }
+        .printer-trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .printer-trust-card {
+            text-align: center;
+            padding: 36px 24px;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .printer-trust-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+            border-color: #93c5fd;
+        }
+        .printer-trust-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+        }
+        .printer-trust-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 8px;
+        }
+        .printer-trust-card p {
+            font-size: 0.83rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ===========================
+           FINAL CTA BANNER
+        =========================== */
+        .printer-final-cta {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .printer-final-cta::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .printer-cta-box {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .printer-cta-box .printer-eyebrow {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.25);
+            color: #93c5fd;
+        }
+        .printer-cta-box h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 0 0 20px;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        .printer-cta-box p {
+            font-size: 1.05rem;
+            color: #94a3b8;
+            line-height: 1.8;
+            margin: 0 0 36px;
+        }
+        .printer-cta-box .printer-hero-buttons {
+            justify-content: center;
+        }
+
+        /* ===========================
+           RESPONSIVE DESIGN
+        =========================== */
+        @media (max-width: 1024px) {
+            .printer-hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            .printer-hero-content p {
+                margin: 0 auto 36px;
+            }
+            .printer-hero-buttons {
+                justify-content: center;
+            }
+            .printer-causes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .printer-steps {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .printer-steps::before {
+                display: none;
+            }
+            .printer-trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .printer-hero {
+                padding: 50px 0 60px;
+            }
+            .printer-hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .printer-section {
+                padding: 56px 0;
+            }
+            .printer-section-heading h2 {
+                font-size: 1.75rem;
+            }
+            .printer-section-heading {
+                margin-bottom: 40px;
+            }
+            .printer-causes-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+            }
+            .printer-steps {
+                grid-template-columns: 1fr 1fr;
+            }
+            .printer-guides-grid {
+                grid-template-columns: 1fr;
+            }
+            .printer-trust-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .printer-cta-box h2 {
+                font-size: 1.85rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .printer-hero-content h1 {
+                font-size: 1.75rem;
+            }
+            .printer-hero-buttons {
+                flex-direction: column;
+            }
+            .printer-btn {
+                width: 100%;
+            }
+            .printer-causes-grid {
+                grid-template-columns: 1fr;
+            }
+            .printer-steps {
+                grid-template-columns: 1fr;
+            }
+            .printer-trust-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
@@ -84,7 +872,7 @@
                             <img src="./images/hp-bg.png" alt="HP Logo" class="h-24 object-contain">
                         </div>
                         <span class="bg-blue-50 text-brand-hp text-xs font-semibold px-4 py-1 rounded-full mb-6 border border-blue-100">Printer Setup</span>
-                        <div class="bg-[#24a0ed] hover:bg-blue-500 text-white font-semibold py-2 px-6 rounded-full transition duration-300 flex items-center space-x-2 w-full justify-center shadow-md text-sm mt-auto">
+                        <div class="bg-[#24a0ed] hover:bg-blue-500 hover:-translate-y-1 hover:shadow-lg text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 flex items-center space-x-2 w-full justify-center shadow-md text-sm mt-auto">
                             <i class="fas fa-arrow-right text-xs"></i>
                             <span>START NOW</span>
                         </div>
@@ -98,7 +886,7 @@
                         <img src="./images/canon-bg.png" alt="Canon Logo" class="h-24 object-contain">
                     </div>
                     <span class="bg-red-50 text-brand-canon text-xs font-semibold px-4 py-1 rounded-full mb-6 border border-red-100">Printer Setup</span>
-                    <button class="bg-[#9c3444] hover:bg-red-800 text-white font-semibold py-2 px-6 rounded-full transition duration-300 flex items-center space-x-2 w-full justify-center shadow-md text-sm">
+                    <button class="bg-[#9c3444] hover:bg-red-800 hover:-translate-y-1 hover:shadow-lg text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 flex items-center space-x-2 w-full justify-center shadow-md text-sm">
                         <i class="fas fa-arrow-right text-xs"></i>
                         <span>START NOW</span>
                     </button>
@@ -112,7 +900,7 @@
                         <img src="./images/epson-bg.png" alt="EPSON Logo" class="h-24 object-contain">
                     </div>
                     <span class="bg-blue-50 text-brand-epson text-xs font-semibold px-4 py-1 rounded-full mb-6 border border-blue-100">Printer Setup</span>
-                    <button class="bg-[#3e56a6] hover:bg-blue-800 text-white font-semibold py-2 px-6 rounded-full transition duration-300 flex items-center space-x-2 w-full justify-center shadow-md text-sm">
+                    <button class="bg-[#3e56a6] hover:bg-blue-800 hover:-translate-y-1 hover:shadow-lg text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 flex items-center space-x-2 w-full justify-center shadow-md text-sm">
                         <i class="fas fa-arrow-right text-xs"></i>
                         <span>START NOW</span>
                     </button>
@@ -126,7 +914,7 @@
                         <img src="./images/brother-bg.png" alt="Brother Logo" class="h-24 object-contain">
                     </div>
                     <span class="bg-blue-50 text-brand-brother text-xs font-semibold px-4 py-1 rounded-full mb-6 border border-blue-100">Printer Setup</span>
-                    <button class="bg-[#37528e] hover:bg-blue-900 text-white font-semibold py-2 px-6 rounded-full transition duration-300 flex items-center space-x-2 w-full justify-center shadow-md text-sm">
+                    <button class="bg-[#37528e] hover:bg-blue-900 hover:-translate-y-1 hover:shadow-lg text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 flex items-center space-x-2 w-full justify-center shadow-md text-sm">
                         <i class="fas fa-arrow-right text-xs"></i>
                         <span>START NOW</span>
                     </button>
@@ -138,164 +926,751 @@
         
         <!-- Decorative subtle wave at bottom of hero if desired, skipping for cleaner look -->
     </header>
+ <!-- =========================
+     PRINTER OFFLINE PAGE
+========================== -->
 
-    <!-- Middle Section: Features & Info -->
-    <section class="middle-bg py-24 min-h-[500px] flex items-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="max-w-xl">
-                <h2 class="text-4xl md:text-[2.75rem] font-bold mb-3 drop-shadow-sm leading-none text-[#3b82f6]">
-                    Print <span class="font-light mx-1">|</span> Scan <span class="font-light mx-1">|</span> Copy <span class="font-light mx-1">|</span> Fax
-                </h2>
-                <h3 class="text-[1.35rem] font-bold text-white mb-1 drop-shadow-md">Your World Renowned Printer Assistant</h3>
-                <p class="text-base text-white font-semibold mb-6 drop-shadow-md">Printers for Home & Office Needs</p>
-                
-                <ul class="text-white space-y-1.5 text-sm font-medium drop-shadow-md">
-                    <li>* Connect Wireless Printer</li>
-                    <li>* Printer Driver Download</li>
-                    <li>* Setup your Printer Quickly</li>
-                </ul>
-            </div>
+<main class="printer-help-page">
+
+  <!-- HERO -->
+  <section class="printer-hero">
+    <div class="printer-container printer-hero-grid">
+
+      <div class="printer-hero-content">
+
+        <span class="printer-badge">
+          <span class="printer-status-dot"></span>
+          Printer Troubleshooting Guide
+        </span>
+
+        <h1>
+          Why Is My
+          <span>Printer Offline?</span>
+        </h1>
+
+        <p>
+          A printer showing offline means your computer can't communicate
+          with the printer right now. It doesn't always mean there's a
+          problem with the printer. Follow our simple troubleshooting
+          steps to get back to printing.
+        </p>
+
+        <div class="printer-hero-buttons">
+          <a href="#troubleshoot" class="printer-btn printer-btn-primary">
+            Troubleshoot Offline Printer →
+          </a>
+
+          <a href="#setup" class="printer-btn printer-btn-secondary">
+            Start Printer Setup
+          </a>
         </div>
-    </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20 bg-white flex-grow">
-        <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-[2rem] font-bold text-[#1e3a8a]">Frequently Asked Questions</h2>
-            </div>
+      </div>
 
-            <div class="space-y-10">
-                <!-- FAQ 1 -->
-                <div>
-                    <h3 class="font-bold text-lg text-[#1d4ed8] mb-2">Q: What are the steps to setup a new printer?</h3>
-                    <div class="text-black text-[15px] space-y-3 leading-relaxed">
-                        <p>A: Setting up a printer is a straightforward process if you have some knowledge about printing devices. But if you're a newbie with a printer, then be careful, as a single misstep can make your printer out of order.</p>
-                        <ol class="list-decimal pl-6 space-y-1.5">
-                            <li>Plug in your printer and connect it to a wifi device.</li>
-                            <li>Visit your printer's manufacturer's website.</li>
-                            <li>Provide your printer model in the search box.</li>
-                            <li>Click on the Driver and Download option from the dashboard.</li>
-                            <li>Download the Driver for your printer and install it.</li>
-                            <li>Print a demo document to check whether your printer is set up correctly.</li>
-                        </ol>
-                    </div>
-                </div>
+      <div class="printer-hero-visual">
 
-                <!-- FAQ 2 -->
-                <div>
-                    <h3 class="font-bold text-lg text-[#1d4ed8] mb-2">Q: My printer is not working properly. What are the reasons?</h3>
-                    <div class="text-black text-[15px] leading-relaxed">
-                        <p>A: There are many reasons for a printer not working, including outdated printer drivers, incorrect configuration, empty ink cartridges, wifi error, driver error, etc. Let our professionals help you get the best results with your printer.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div>
-                    <h3 class="font-bold text-lg text-[#1d4ed8] mb-2">Q: I changed my printer cartridges recently, and my printer has not been working since then.</h3>
-                    <div class="text-black text-[15px] leading-relaxed">
-                        <p>A: Sometimes, when we change the ink cartridge or refill it, the printer still reads it as an empty cartridge, or sometimes, it doesn't even recognize the new ink cartridge. You can try resetting your printer cartridge settings or reinstalling your printer's ink cartridge.</p>
-                    </div>
-                </div>
-                
-                <!-- Support section -->
-                <div class="mt-24 pt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Column 1 -->
-                        <div class="text-center px-2">
-                            <div class="flex justify-center mb-5">
-                                <i class="fas fa-user-headset text-4xl text-black"></i>
-                            </div>
-                            <h3 class="font-bold text-xl text-black mb-3">24×7 Customer Support</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">We really care about our clients, and that's why our professionals are here for you round the clock. Need help, contact us anytime.</p>
-                        </div>
-                        <!-- Column 2 -->
-                        <div class="text-center px-2">
-                            <div class="flex justify-center mb-5">
-                                <i class="fas fa-user-headset text-4xl text-black"></i>
-                            </div>
-                            <h3 class="font-bold text-xl text-black mb-3">Years of Experience</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">Our professionals have been helping printer users for over a decade, and with vast experience, they are capable of resolving any printer issue.</p>
-                        </div>
-                        <!-- Column 3 -->
-                        <div class="text-center px-2">
-                            <div class="flex justify-center mb-5">
-                                <i class="fas fa-user-headset text-4xl text-black"></i>
-                            </div>
-                            <h3 class="font-bold text-xl text-black mb-3">Support you need</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">Our team of experts has in-depth knowledge about printer devices and has or can resolve any query, whether it is related to Driver or anything.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="printer-status-card">
+          <small>Printer Status</small>
+          <strong>● Offline</strong>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#2563eb] pt-16 pb-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                
-                <!-- Account -->
-                <div class="bg-[#3b82f6] rounded-xl p-6 shadow-sm">
-                    <h5 class="text-white text-[17px] font-bold mb-5 tracking-wide">Account</h5>
-                    <ul class="space-y-3 text-[14px]">
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">My Account</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Order History</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Track Order</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Shopping Cart</a></li>
-                    </ul>
-                </div>
+        <div class="printer-illustration">
 
-                <!-- Quick Links -->
-                <div class="bg-[#3b82f6] rounded-xl p-6 shadow-sm">
-                    <h5 class="text-white text-[17px] font-bold mb-5 tracking-wide">Quick Links</h5>
-                    <ul class="space-y-3 text-[14px]">
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Privacy Policy</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Shipping Policy</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Returns & Exchanges</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Cookies Policy</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Accessibility</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Disclaimer</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Consumer Rights</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Do Not Sell or Share My Info</a></li>
-                    </ul>
-                </div>
+          <div class="printer-paper"></div>
 
-                <!-- Company -->
-                <div class="bg-[#3b82f6] rounded-xl p-6 shadow-sm">
-                    <h5 class="text-white text-[17px] font-bold mb-5 tracking-wide">Company</h5>
-                    <ul class="space-y-3 text-[14px]">
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">About Us</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Contact us</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Terms & Conditions</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">FAQ & Help Center</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Printer Buying Guide</a></li>
-                        <li><a href="#" class="text-white hover:text-blue-100 transition">Guides & Resources</a></li>
-                    </ul>
-                </div>
+          <div class="printer-machine">
 
-                <!-- Get in Touch -->
-                <div class="bg-[#3b82f6] rounded-xl p-6 shadow-sm">
-                    <h5 class="text-white text-[17px] font-bold mb-5 tracking-wide">Get in Touch</h5>
-                    <div class="space-y-4 text-[14px] text-white">
-                        <div>
-                            <span class="block mb-1">Email:</span>
-                            <a href="mailto:support@quickprintassists.com" class="hover:text-blue-100 transition block">support@quickprintassists.com</a>
-                        </div>
-                        <div>
-                            <span class="block">17807 Lakecrest View Drive</span>
-                            <span class="block">Cypress, TX 77433</span>
-                        </div>
-                        <div>
-                            <span class="block">Support: Monday–Friday, 9am–</span>
-                            <span class="block">6pm ET</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="printer-top"></div>
 
-            </div>
+            <div class="printer-display"></div>
+
+            <div class="printer-output"></div>
+
+          </div>
+
         </div>
-    </footer>
+
+        <div class="printer-check-card">
+          <span>✓</span>
+          Connection Check
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- COMMON CAUSES -->
+  <section class="printer-section" id="troubleshoot">
+
+    <div class="printer-container">
+
+      <div class="printer-section-heading">
+
+        <span class="printer-eyebrow">
+          TROUBLESHOOT OFFLINE PRINTER
+        </span>
+
+        <h2>Why Does My Printer Show Offline?</h2>
+
+        <p>
+          Several common connection, configuration, hardware, or software
+          issues can prevent your computer from communicating with your printer.
+        </p>
+
+      </div>
+
+
+      <div class="printer-causes-grid">
+
+        <div class="printer-cause-card">
+          <div class="printer-cause-icon">📡</div>
+          <h3>Printer and Computer on Different Networks</h3>
+          <p>
+            Your printer and computer may be connected to different
+            Wi-Fi networks.
+          </p>
+        </div>
+
+        <div class="printer-cause-card">
+          <div class="printer-cause-icon">✓</div>
+          <h3>Wrong Printer Selected</h3>
+          <p>
+            Another printer may be selected as your computer's
+            default printing device.
+          </p>
+        </div>
+
+        <div class="printer-cause-card">
+          <div class="printer-cause-icon">📶</div>
+          <h3>Wi-Fi or Network Issue</h3>
+          <p>
+            Weak Wi-Fi signals, network interruptions, or router
+            problems can affect printer connectivity.
+          </p>
+        </div>
+
+        <div class="printer-cause-card">
+          <div class="printer-cause-icon">📄</div>
+          <h3>Stuck Print Queue</h3>
+          <p>
+            A failed or stuck print job can prevent new documents
+            from being printed.
+          </p>
+        </div>
+
+        <div class="printer-cause-card">
+          <div class="printer-cause-icon">⏱</div>
+          <h3>Printer in Sleep Mode</h3>
+          <p>
+            Some printers enter deep sleep mode or may simply
+            be powered off.
+          </p>
+        </div>
+
+        <div class="printer-cause-card">
+          <div class="printer-cause-icon">⚙</div>
+          <h3>Outdated Driver or Software</h3>
+          <p>
+            Outdated or corrupted printer drivers can cause
+            communication problems.
+          </p>
+        </div>
+
+        <div class="printer-cause-card">
+          <div class="printer-cause-icon">🔌</div>
+          <h3>USB or Ethernet Disconnected</h3>
+          <p>
+            A loose, damaged, or disconnected cable can make
+            your printer appear offline.
+          </p>
+        </div>
+
+        <div class="printer-cause-card">
+          <div class="printer-cause-icon">🔧</div>
+          <h3>Printer Configuration Changed</h3>
+          <p>
+            Router changes, IP changes, or updated printer settings
+            can affect communication.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SETUP STEPS -->
+  <section class="printer-section printer-setup-section" id="setup">
+
+    <div class="printer-container">
+
+      <div class="printer-section-heading">
+
+        <span class="printer-eyebrow">
+          SIMPLE SETUP
+        </span>
+
+        <h2>Connect Your Printer in 5 Simple Steps</h2>
+
+        <p>
+          Follow this general setup process for most printers.
+        </p>
+
+      </div>
+
+
+      <div class="printer-steps">
+
+        <div class="printer-step-card">
+
+          <div class="printer-step-number">01</div>
+
+          <h3>Prepare Your Printer</h3>
+
+          <p>
+            Unbox your printer, install ink or toner, load paper,
+            and power it on.
+          </p>
+
+        </div>
+
+
+        <div class="printer-step-card">
+
+          <div class="printer-step-number">02</div>
+
+          <h3>Choose Connection</h3>
+
+          <p>
+            Connect using Wi-Fi, USB, or Ethernet based on your
+            printer and device.
+          </p>
+
+        </div>
+
+
+        <div class="printer-step-card">
+
+          <div class="printer-step-number">03</div>
+
+          <h3>Add to Computer</h3>
+
+          <p>
+            Go to your computer's printer settings and add or
+            connect your printer.
+          </p>
+
+        </div>
+
+
+        <div class="printer-step-card">
+
+          <div class="printer-step-number">04</div>
+
+          <h3>Install Drivers</h3>
+
+          <p>
+            Download and install the required drivers from the
+            official manufacturer's website.
+          </p>
+
+        </div>
+
+
+        <div class="printer-step-card">
+
+          <div class="printer-step-number">05</div>
+
+          <h3>Print Test Page</h3>
+
+          <p>
+            Print a test page to confirm your printer is
+            ready to use.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="printer-centered-button">
+
+        <a href="#guides" class="printer-btn printer-btn-primary">
+          Start Printer Setup →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- COMMON PRINTER PROBLEMS -->
+  <section class="printer-section" id="guides">
+
+    <div class="printer-container">
+
+      <div class="printer-section-heading">
+
+        <span class="printer-eyebrow">
+          PRINTER HELP CENTER
+        </span>
+
+        <h2>Find Guidance for Common Printer Problems</h2>
+
+        <p>
+          Simple guidance for printer setup, connection, printing,
+          and scanner problems.
+        </p>
+
+      </div>
+
+
+      <div class="printer-guides-grid">
+
+        <a href="#" class="printer-guide-card">
+          <div class="printer-guide-icon">🖨️</div>
+          <div>
+            <h3>Printer Setup Help</h3>
+            <p>Step-by-step setup for new printers.</p>
+          </div>
+          <span class="printer-arrow">→</span>
+        </a>
+
+
+        <a href="#" class="printer-guide-card">
+          <div class="printer-guide-icon">📶</div>
+          <div>
+            <h3>Connect to Wi-Fi</h3>
+            <p>Wireless setup and connection help.</p>
+          </div>
+          <span class="printer-arrow">→</span>
+        </a>
+
+
+        <a href="#" class="printer-guide-card">
+          <div class="printer-guide-icon">🔄</div>
+          <div>
+            <h3>Printer Offline Fix</h3>
+            <p>Get your offline printer back online.</p>
+          </div>
+          <span class="printer-arrow">→</span>
+        </a>
+
+
+        <a href="#" class="printer-guide-card">
+          <div class="printer-guide-icon">📄</div>
+          <div>
+            <h3>Printer Not Printing</h3>
+            <p>Solve printing issues and errors.</p>
+          </div>
+          <span class="printer-arrow">→</span>
+        </a>
+
+
+        <a href="#" class="printer-guide-card">
+          <div class="printer-guide-icon">💻</div>
+          <div>
+            <h3>Connect to Computer</h3>
+            <p>Add and connect your printer to a computer.</p>
+          </div>
+          <span class="printer-arrow">→</span>
+        </a>
+
+
+        <a href="#" class="printer-guide-card">
+          <div class="printer-guide-icon">➕</div>
+          <div>
+            <h3>Add Printer to Computer</h3>
+            <p>Can't find your printer? We can help.</p>
+          </div>
+          <span class="printer-arrow">→</span>
+        </a>
+
+
+        <a href="#" class="printer-guide-card">
+          <div class="printer-guide-icon">📷</div>
+          <div>
+            <h3>Scanner Not Working</h3>
+            <p>Fix scanning and scan-to-PC issues.</p>
+          </div>
+          <span class="printer-arrow">→</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="printer-section" id="faq">
+
+    <div class="printer-container">
+
+      <div class="printer-section-heading">
+
+        <span class="printer-eyebrow">
+          FREQUENTLY ASKED QUESTIONS
+        </span>
+
+        <h2>Printer Questions, Answered</h2>
+
+        <p>
+          Quick answers to common printer setup and troubleshooting questions.
+        </p>
+
+      </div>
+
+
+      <div class="printer-faq">
+
+        <div class="printer-faq-item active">
+
+          <button class="printer-faq-question">
+
+            <span>How do I set up a new printer?</span>
+
+            <span class="printer-faq-plus">+</span>
+
+          </button>
+
+          <div class="printer-faq-answer">
+
+            <p>
+              Setting up a printer involves unboxing it, removing all
+              protective tape, plugging it into a power source, and
+              installing ink or toner cartridges. Next, connect it to
+              your Wi-Fi network and install the necessary drivers from
+              the manufacturer's website to start printing.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="printer-faq-item">
+
+          <button class="printer-faq-question">
+
+            <span>Why is my printer showing offline?</span>
+
+            <span class="printer-faq-plus">+</span>
+
+          </button>
+
+          <div class="printer-faq-answer">
+
+            <p>
+              A printer typically shows as offline when your computer
+              cannot communicate with it. This can be caused by network
+              connection drops, an outdated driver, a stuck print queue,
+              or the printer entering a deep sleep mode. Restarting both
+              your computer and printer is a good first step.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="printer-faq-item">
+
+          <button class="printer-faq-question">
+
+            <span>How do I fix printer offline issues?</span>
+
+            <span class="printer-faq-plus">+</span>
+
+          </button>
+
+          <div class="printer-faq-answer">
+
+            <p>
+              First, ensure your printer is powered on and connected to
+              the same Wi-Fi network as your computer. You can also try
+              clearing the print queue, setting your printer as the
+              default device, or running your computer's built-in
+              printer troubleshooter.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="printer-faq-item">
+
+          <button class="printer-faq-question">
+
+            <span>Why is my printer not connecting to Wi-Fi?</span>
+
+            <span class="printer-faq-plus">+</span>
+
+          </button>
+
+          <div class="printer-faq-answer">
+
+            <p>
+              Your Wi-Fi signal might be too weak, or you may be entering
+              an incorrect password. Some older printers only support
+              2.4GHz Wi-Fi bands, so check your router and printer
+              compatibility. Restarting your router can also help
+              resolve temporary connection problems.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="printer-faq-item">
+
+          <button class="printer-faq-question">
+
+            <span>How do I connect a printer to my computer?</span>
+
+            <span class="printer-faq-plus">+</span>
+
+          </button>
+
+          <div class="printer-faq-answer">
+
+            <p>
+              For a wireless connection, connect the printer to your
+              Wi-Fi network using its control panel. Then go to your
+              computer's Printers & Scanners settings and select
+              "Add a printer". For a wired connection, plug the USB
+              cable directly into your computer.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="printer-faq-item">
+
+          <button class="printer-faq-question">
+
+            <span>
+              My printer is connected but not printing. What should I do?
+            </span>
+
+            <span class="printer-faq-plus">+</span>
+
+          </button>
+
+          <div class="printer-faq-answer">
+
+            <p>
+              Check the printer for physical issues such as a paper jam,
+              empty ink or toner cartridges, or error messages. If the
+              hardware is fine, clear the print queue, restart the
+              Print Spooler service on Windows, and try printing a
+              test page.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="printer-faq-item">
+
+          <button class="printer-faq-question">
+
+            <span>Why is my scanner not working?</span>
+
+            <span class="printer-faq-plus">+</span>
+
+          </button>
+
+          <div class="printer-faq-answer">
+
+            <p>
+              Scanner problems frequently stem from outdated or corrupted
+              scanning software or a disrupted connection between the
+              scanner and computer. Ensure the latest scanner drivers are
+              installed and try the official scanning application provided
+              by your printer manufacturer.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="printer-faq-item">
+
+          <button class="printer-faq-question">
+
+            <span>Where can I download the correct printer drivers?</span>
+
+            <span class="printer-faq-plus">+</span>
+
+          </button>
+
+          <div class="printer-faq-answer">
+
+            <p>
+              Always download printer drivers directly from the official
+              manufacturer's website. Search for your specific printer
+              model on the manufacturer's support page, select your
+              operating system, and download the recommended software package.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TRUST -->
+  <section class="printer-section printer-trust-section">
+
+    <div class="printer-container">
+
+      <div class="printer-section-heading">
+
+        <span class="printer-eyebrow">
+          WHY QUICK PRINT ASSISTS?
+        </span>
+
+        <h2>Helpful & Easy Printer Guidance</h2>
+
+      </div>
+
+
+      <div class="printer-trust-grid">
+
+        <div class="printer-trust-card">
+          <div class="printer-trust-icon">🔒</div>
+          <h3>Safe & Secure</h3>
+          <p>
+            Your privacy is important. We keep your information
+            safe and secure.
+          </p>
+        </div>
+
+
+        <div class="printer-trust-card">
+          <div class="printer-trust-icon">✓</div>
+          <h3>Easy to Follow</h3>
+          <p>
+            Simple, clear and easy step-by-step guidance for everyone.
+          </p>
+        </div>
+
+
+        <div class="printer-trust-card">
+          <div class="printer-trust-icon">⚡</div>
+          <h3>Save Time & Effort</h3>
+          <p>
+            Quick solutions for common printer problems.
+          </p>
+        </div>
+
+
+        <div class="printer-trust-card">
+          <div class="printer-trust-icon">★</div>
+          <h3>Trusted Guidance</h3>
+          <p>
+            Practical help for home and office printers.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL CTA -->
+  <section class="printer-final-cta">
+
+    <div class="printer-container">
+
+      <div class="printer-cta-box">
+
+        <span class="printer-eyebrow">
+          NEED MORE HELP?
+        </span>
+
+        <h2>Let's Get Your Printer Working!</h2>
+
+        <p>
+          Follow our easy guides to set up your printer, fix connection
+          issues, resolve offline errors, and get back to printing
+          without the hassle.
+        </p>
+
+        <div class="printer-hero-buttons">
+
+          <a href="#setup" class="printer-btn printer-btn-primary">
+            Start Printer Setup →
+          </a>
+
+          <a href="#guides" class="printer-btn printer-btn-secondary">
+            Browse Articles
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FAQ SCRIPT -->
+<script>
+
+  document.querySelectorAll(".printer-faq-question").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      const item = button.closest(".printer-faq-item");
+
+      document
+        .querySelectorAll(".printer-faq-item")
+        .forEach(other => {
+
+          if (other !== item) {
+            other.classList.remove("active");
+          }
+
+        });
+
+      item.classList.toggle("active");
+
+    });
+
+  });
+
+</script>
+   
 </body>
 </html>
+
+
+
+
+
+
